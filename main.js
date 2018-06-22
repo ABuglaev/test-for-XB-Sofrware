@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let closestCity = 0;
       let minDistance = +Infinity;
       const earthRadius = 6372795;
-
+      
       this.list.forEach( (_el, _i) => {
       //Перевод координат в радианы
       let lat1 = _lat * Math.PI / 180;
@@ -81,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function() {
           closestCity = _i;
         }
       });
-      alert(`Nearest city to ${_lat}, ${_long} is ${Object.keys( this.list[closestCity])[0].match(/^[^,]+/i)}`); //Регулярка выбирает всё до запятой, т.е. отсекает штат
+      alert(`The nearest city to ${_lat}, ${_long} is ${Object.keys( this.list[closestCity])[0].match(/^[^,]+/i)}`); //Регулярка выбирает всё до запятой, т.е. отсекает штат
     }
 
     showStateAbbr() {
@@ -92,6 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
       let statesSet = new Set(abbrArr);
       let statesStr = [...statesSet].join(' ');
       alert(`States list string is: \n${statesStr}`);
+      console.log(statesStr);
     }
 
     addListerners() {
